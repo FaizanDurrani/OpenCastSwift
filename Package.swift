@@ -11,6 +11,7 @@ let package = Package(
             name: "OpenCastSwift",
             targets: ["OpenCastSwift"]),
     ],
+    
     dependencies: [
         .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.8.0"),
         .package(url: "git@github.com:SwiftyJSON/SwiftyJSON.git", from: "5.0.0")
@@ -20,9 +21,6 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "OpenCastSwift",
-            dependencies: []),
-        .testTarget(
-            name: "OpenCastSwiftTests",
-            dependencies: ["OpenCastSwift"]),
+            dependencies: ["SwiftyJSON", "SwiftProtobuf", "SwiftProtobufPluginLibrary"])
     ]
 )
